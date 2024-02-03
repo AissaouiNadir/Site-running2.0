@@ -1,65 +1,139 @@
-.logo {
-    display: block;
-    width: 150px;
-    height: 150px;
-
-}
-
-
 html {
     font-family: Verdana, Helvetica, sans-serif;
     display: flex;
+}
 
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
 }
 
 header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    z-index: 3;
+    width: 90%;
+    z-index: 99;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    text-transform: uppercase;
     height: 100px;
-    padding: 0 30px;
+    padding: 20px 100px;
 }
-.logo{
+
+.logo {
+    display: block;
+    width: 150px;
+    height: 150px;
     margin-top: 5%;
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
 }
 
-.nav-main-menu ul li a::after {
-    content: '';
+.section1, .section2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.section1 .content {
+    background: url('img/runing.jpg') no-repeat;
+}
+
+.section2 .content{
+    background: url('img/runing2.jpg') no-repeat;
+}
+
+.content {
+    text-align: center; /* Centrer le texte */
+    position: absolute; /* Position absolue pour centrer le contenu */
+    top: 50%; /* Déplacer le conteneur à 50% du haut de la section */
+    left: 50%; /* Déplacer le conteneur à 50% de la gauche de la section */
+    transform: translate(-50%, -50%); /* Déplacer le conteneur de moitié de sa largeur et de sa hauteur vers le haut et la gauche */
+    position: relative; /* Pour que les éléments internes soient positionnés relativement */
+}
+
+.text-container {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: #fff;
-    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-    transform-origin: right center;
-  }
-.nav-main-menu {
-    display: flex;
-    justify-content: flex-end; /* Pour aligner à droite */
-    margin-top: 20px; /* Ajout de marge en haut */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; /* Centrer le texte */
 }
 
-.nav-main-menu ul {
-    display: flex;
-    list-style: none; /* Pour supprimer les puces */
+.text-container h4, .text-container h2 {
+    margin: 0; /* Supprimer les marges par défaut des éléments h4 et h2 */
 }
 
-.nav-main-menu ul li {
-    margin-right: 50px; /* Espacement de 50px entre les éléments */
+.image {
+    text-align: center; /* Centre les images */
+}
+
+.navigation {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.navigation ul {
+    display: flex;
+    list-style: none;
+}
+
+.navigation ul li {
+    margin-right: 30px;
     padding-bottom: 2px;
 }
 
-/* Suppression des puces des sous-listes */
-.nav-main-menu ul ul {
-    list-style: none;
+.navigation a {
+    color: #fff;
+    position: relative;
+    font-size: 1.1em;
+    text-decoration: none;
+    font-weight: 500;
 }
-.section1{
-    background-image: url(/img/renner.jpg);
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.navigation .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 20px; /* Adjusted margin */
+    transition: .5s;
+}
+
+.navigation .btnLogin-popup:hover {
+    background: #fff;
+    color: #162938;
 }
