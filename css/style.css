@@ -25,9 +25,9 @@ header {
 
 .logo {
     display: block;
-    width: 150px;
-    height: 150px;
-    margin-top: 5%;
+    width: 600px;
+    height: 90px;
+    margin-top: 1%;
     font-size: 2em;
     color: #fff;
     user-select: none;
@@ -131,6 +131,7 @@ header {
     font-weight: 500;
     margin-left: 20px; /* Adjusted margin */
     transition: .5s;
+    margin-top: -15px;
 }
 
 .navigation .btnLogin-popup:hover {
